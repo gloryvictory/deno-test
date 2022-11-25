@@ -14,3 +14,15 @@ const newText = 'New text to write to file';
 await Deno.writeFile('./newtextfile.txt',encoder.encode(newText));
 
 await Deno.writeTextFile('./newtextfile.txt',newText);
+
+const renameConfirmation = confirm('Do you whant to rename the file');
+
+const textFile = './newtextfile.txt'
+
+if(renameConfirmation){
+
+    await Deno.rename('./newtextfile.txt', './newtextfile-renamed.txt');
+
+}else{
+    console.log(`file ${textFile} not renamed`);
+}
