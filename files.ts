@@ -10,4 +10,7 @@ console.log(decoder.decode(data));
 
 const encoder = new TextEncoder();
 const newText = 'New text to write to file';
-await DelayNode.writeFile('./newtextfile, encoder');
+
+await Deno.writeFile('./newtextfile.txt',encoder.encode(newText));
+
+await Deno.writeTextFile('./newtextfile.txt',newText);
